@@ -54,19 +54,21 @@ button{
 .step span{display:block;font-weight:700}
 .step small{opacity:.9}
 
+/* ✅ PROCESSING – Yellow blinking */
 .alert-btn{
   margin-top:14px;
-  background:red;
-  color:white;
+  background:#ffd400;
+  color:#000;
   padding:12px;
   border-radius:8px;
   text-align:center;
   font-weight:800;
-  animation:blink 1s infinite;
+  animation:blinkYellow 1s infinite;
+  box-shadow:0 0 10px rgba(255,212,0,.8);
 }
-@keyframes blink{
+@keyframes blinkYellow{
   0%{opacity:1}
-  50%{opacity:.3}
+  50%{opacity:.35}
   100%{opacity:1}
 }
 
@@ -100,7 +102,7 @@ button{
 
       <div class="countdown" id="timer">⏱ Time since departure: calculating…</div>
 
-      <div class="alert-btn">🚨 STATUS: Processing</div>
+      <div class="alert-btn">⚠️ STATUS: Processing</div>
 
       <h3>Tracking Timeline</h3>
       <div class="timeline">
@@ -139,8 +141,6 @@ const DATA = [
 ];
 
 let hideTimer;
-
-// Set exact departure time
 const departureDate = new Date(2026,0,14,11,14,0);
 
 function updateTimer(){
